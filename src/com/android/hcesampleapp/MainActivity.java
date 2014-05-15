@@ -71,7 +71,6 @@ public class MainActivity extends Activity {
 		// the app
 		scanIntent.putExtra(CardIOActivity.EXTRA_SUPPRESS_MANUAL_ENTRY, false); // default:
 																				// false
-		Log.d(TAG, "Extra added to Intent");
 		// MY_SCAN_REQUEST_CODE is arbitrary and is only used within this
 		// activity.
 		startActivityForResult(scanIntent, MY_SCAN_REQUEST_CODE);
@@ -116,7 +115,6 @@ public class MainActivity extends Activity {
 			// do something with resultDisplayStr, maybe display it in a textView
 			resultTextView.setText(resultStr);
 			
-			Log.d(TAG,"before onSendPress() ");
 			
 			// start HCE service with Card Info.
 			Intent hceService = new Intent(this, MyHostApduService.class);
@@ -128,19 +126,7 @@ public class MainActivity extends Activity {
 	}
 
 	
-	public void onSendPress(View v) {
-		
-		Log.d(TAG,"onSendPress()");
-		
-//		// start HCE service with Card Info.
-//		 Intent hceService = new Intent(getBaseContext(), MyHostApduService.class);
-//		 Bundle extra = new Bundle();
-//		 extra.putString(CARD_INFO, resultTextView.getText().toString());
-//		 hceService.putExtras(extra);
-//		 getBaseContext().startService(hceService);
-	}
-	
-	
+
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 
